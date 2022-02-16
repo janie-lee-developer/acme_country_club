@@ -21,7 +21,8 @@ app.get('/members', async (req, res, next) => {
     try {
         res.send(await Member.findAll({
             include: [
-                { model: Member, as: 'sponsered' }
+                { model: Member, as: 'sponsor' },
+                { model: Member, as: 'sponsered' }  
             ]
         }));
     }
